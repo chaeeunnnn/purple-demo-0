@@ -11,8 +11,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # OpenAI API 키 설정
-youtube_api_key = os.environ.get('YOUTUBE_API_KEY')
-client = OpenAI(api_key=os.environ.get('API_KEY'))
+#youtube_api_key = os.environ.get('YOUTUBE_API_KEY')
+#client = OpenAI(api_key=os.environ.get('API_KEY'))
+youtube_api_key = st.secrets["youtube_api_key"]
+api_key = st.secrets["api_key"]
+client = OpenAI(api_key=api_key)
 
 
 # 유튜브 검색을 위한 빌드
